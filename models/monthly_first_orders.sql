@@ -12,4 +12,4 @@ WITH monthly_first_orders AS (
     GROUP BY 1
 ) 
 
-SELECT * FROM monthly_first_orders ORDER BY 1 DESC
+SELECT * FROM {{ source('coffee_shop', 'monthly_first_orders') }} ORDER BY 1 DESC

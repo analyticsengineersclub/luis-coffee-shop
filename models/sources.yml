@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: coffee_shop
+    project: week2-aec
+    tables:
+      - name: customers
+        columns:
+          - name: customer_id
+            tests:
+              - unique
+              - not_null
+
+      - name: monthly_first_orders
+

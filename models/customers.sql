@@ -30,4 +30,4 @@ final AS (
         ON customers.id = customer_orders.customer_id
 )
 
-SELECT * FROM final
+SELECT * FROM {{ source('coffee_shop', 'customers') }}
