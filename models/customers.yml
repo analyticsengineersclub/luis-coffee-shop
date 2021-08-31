@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: customers
+    description: '{{ doc("customers") }}'
+    columns:
+      - name: customer_id
+        description: Customer's first time order
+        tests:
+          - not_null
+          - unique
+          
+      - name: number_of_orders
+        description: Total number of orders made by the customer
+
+      - name: first_order
+        description: Date of the customer's first order
+
+      - name: total_order_value
+        description: Sum of all customer's orders
+        
