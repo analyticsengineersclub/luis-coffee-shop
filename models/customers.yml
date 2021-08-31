@@ -9,7 +9,7 @@ models:
         tests:
           - not_null
           - unique
-
+          
       - name: number_of_orders
         description: Total number of orders made by the customer
 
