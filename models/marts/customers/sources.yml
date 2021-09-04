@@ -8,6 +8,7 @@ sources:
         count: 12
         period: hour
     loaded_at_field: created_at
+    
     tables:
       - name: customers
         columns:
@@ -22,3 +23,18 @@ sources:
             tests:
               - unique
               - not_null
+
+      - name: products
+        columns:
+          - name: id
+            tests: 
+              - unique
+              - not_null
+      
+      - name: product_prices
+        columns:
+          - name: id
+            tests: 
+              - unique
+              - not_null
+              
