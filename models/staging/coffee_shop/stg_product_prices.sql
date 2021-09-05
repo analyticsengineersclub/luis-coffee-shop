@@ -4,7 +4,7 @@ with source as (
 
 renamed as (
     select
-        id as prices_id 
+        id 
         , product_id
         , price as product_price
         , created_at 

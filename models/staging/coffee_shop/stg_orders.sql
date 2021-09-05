@@ -4,7 +4,7 @@ with source as (
 
 renamed as (
     select
-        id as order_id
+        id 
         , customer_id
         , created_at 
         , total
