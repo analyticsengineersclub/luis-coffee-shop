@@ -26,13 +26,14 @@ final as (
     from order_items
 
     left join orders
-    on orders.order_id = order_items.id
+    on orders.order_id = order_items.order_id
 
     left join products 
     on products.id = order_items.product_id
 
     left join product_prices 
     on product_prices.product_id = products.id
+    and orders.created_at between product_prices.created_at and product_prices.ended_at
 
 )
 
