@@ -5,7 +5,7 @@ models:
     description: '{{ doc("customers") }}'
     columns:
       - name: customer_id
-        description: Customer's first time order
+        description: Unique customer identifier
         tests:
           - not_null
           - unique
