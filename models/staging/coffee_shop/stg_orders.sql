@@ -10,7 +10,7 @@ renamed as (
         , total
         , address as shippig_address
         , state as shipping_state
-        , zip as shipping_zip
+        , zip as shipping_zip_code
     from source
 )
 
