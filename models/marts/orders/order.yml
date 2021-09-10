@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: orders
+    description: Coffee shop customer orders
+    columns:
+      - name: order_id
+        description: Unique order identifier
+        tests:
+          - not_null
+          - unique
+      
+      - name: customer_id
+        description: Unique identifier of customer orders
+      
+      - name: is_new_customer
+        tests:
+          - not_null

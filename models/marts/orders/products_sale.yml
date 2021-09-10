@@ -1,0 +1,11 @@
+vversion: 2
+
+models:
+  - name: orders
+    description: Coffee shop customer orders
+    columns:
+      - name: order_id
+        description: Unique order identifier
+        tests:
+          - not_null
+          - unique
