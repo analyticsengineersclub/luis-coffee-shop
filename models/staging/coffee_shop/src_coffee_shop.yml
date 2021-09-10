@@ -19,14 +19,14 @@ sources:
 
       - name: orders
         columns:
-          - name: order_id
+          - name: id
             tests:
               - unique
               - not_null
 
       - name: products
         columns:
-          - name: product_id
+          - name: id
             tests: 
               - unique
               - not_null
