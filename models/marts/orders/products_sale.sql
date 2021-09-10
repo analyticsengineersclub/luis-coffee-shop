@@ -17,9 +17,6 @@ final as (
     select 
     orders.order_id
     , orders.created_at
-    , case when first_value(orders.created_at) OVER (PARTITION BY customer_id order by orders.created_at) = orders.created_at then 'new customer' 
-      else 'existing customer' 
-      end AS is_new_customer
     , products.product_category
     , product_prices.product_price
        
