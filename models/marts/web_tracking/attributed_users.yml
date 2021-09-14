@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: attributed_users
+    columns:
+      - name: pageview_id
+        tests:
+          - not_null
+          - unique
+      - name: visitor_id
+        tests:
+          - not_null
+      - name: attributed_user_id
+        tests:
+          - not_null
+      - name: session_id
+        tests:
+          - not_null
+          

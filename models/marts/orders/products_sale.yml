@@ -1,7 +1,7 @@
-vversion: 2
+version: 2
 
 models:
-  - name: orders
+  - name: products_sale
     description: Coffee shop customer orders
     columns:
       - name: order_id

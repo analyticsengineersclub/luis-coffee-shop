@@ -15,7 +15,8 @@ orders AS ( select * from {{ ref('coffee_shop', 'stg_orders') }}),
 
 final as (
     select 
-    orders.order_id
+     order_items.id as order_items_id
+    , orders.order_id as order_id
     , orders.created_at
     , products.product_category
     , product_prices.product_price
@@ -23,14 +24,14 @@ final as (
     from order_items
 
     left join orders
-    on orders.order_id = order_items.order_id
+        on order_items.order_id = orders.order_id
 
     left join products 
-    on products.id = order_items.product_id
+        on order_items.product_id = products.id
 
     left join product_prices 
-    on product_prices.product_id = products.id
-    and orders.created_at between product_prices.created_at and product_prices.ended_at
+        on order_items.product_id = product_prices.product_id
+        and orders.created_at between product_prices.created_at and product_prices.ended_at
 
 )
 
