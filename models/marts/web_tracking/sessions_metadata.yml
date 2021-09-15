@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: sessions_metadata
+    columns:
+      - name: session_id
+        tests:
+          - not_null
+          - unique
