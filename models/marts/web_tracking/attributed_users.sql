@@ -28,7 +28,7 @@ time_between_pageviews as (
     select
         *
         , lag(timestamp) over (PARTITION BY attributed_user_id order by timestamp) as previous_page_view
-        , date_diff(timestamp, lag(timestamp) over (PARTITION BY attributed_user_id order by timestamp), minute) as inactivity_time 
+        , date_diff(timestamp, lag(timestamp) over (partition by attributed_user_id order by timestamp), minute) as inactivity_time 
     from user_stitching
 ),
 

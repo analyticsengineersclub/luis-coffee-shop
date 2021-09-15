@@ -3,15 +3,15 @@
     ) 
 }}
 
-WITH
+with
 
-product_prices AS ( select * from {{ ref('coffee_shop', 'stg_product_prices') }}),
+product_prices as ( select * from {{ ref('coffee_shop', 'stg_product_prices') }}),
 
-products AS ( select * from {{ ref('coffee_shop', 'stg_products') }}),
+products as ( select * from {{ ref('coffee_shop', 'stg_products') }}),
 
-order_items AS ( select * from {{ ref('coffee_shop', 'stg_order_items') }}), 
+order_items as ( select * from {{ ref('coffee_shop', 'stg_order_items') }}), 
 
-orders AS ( select * from {{ ref('coffee_shop', 'stg_orders') }}),
+orders as ( select * from {{ ref('coffee_shop', 'stg_orders') }}),
 
 final as (
     select 
