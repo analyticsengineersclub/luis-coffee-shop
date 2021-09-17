@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: ltv
+    description: Customer Lifetime Value helper model 
+    columns:
+      - name: weekly_cumulative_revenue
+        description: 
+        tests:
+          - greater_than_zero
