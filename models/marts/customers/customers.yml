@@ -13,7 +13,7 @@ models:
       - name: number_of_orders
         description: Total number of orders made by the customer
 
-      - name: first_order
+      - name: first_order_at
         description: Date of the customer's first order
 
       - name: total_order_value

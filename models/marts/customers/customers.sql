@@ -3,30 +3,34 @@
     ) 
 }}
 
-WITH 
+with 
 
-customer_orders AS (
-    SELECT 
+customers as (select * from {{ ref('coffee_shop', 'stg_customers') }}),
+
+orders as (select * from {{ ref('coffee_shop', 'stg_orders') }}),
+
+customer_orders as (
+    select 
         customer_id
-        , COUNT(*) AS number_of_orders
-        , MIN(created_at) AS first_order
-        , SUM(total) AS total_order_value
-    FROM {{ source('coffee_shop', 'orders') }} 
-    GROUP BY 1
+        , count(*) as number_of_orders
+        , min(created_at) as first_order_at
+        , sum(total) as total_order_value
+    from orders
+    group by 1
 ),
 
-final AS (
-    SELECT 
-        customers.id AS customer_id
-        , customers.name AS customer_name
-        , customers.email AS customer_email
+final as (
+    select 
+        customers.id as customer_id
+        , customers.customer_name 
+        , customers.customer_email 
         , customer_orders.number_of_orders
-        , customer_orders.first_order
+        , customer_orders.first_order_at
         , customer_orders.total_order_value
-    FROM
-        {{ source('coffee_shop', 'customers') }} AS customers
-    JOIN customer_orders 
-        ON customers.id = customer_orders.customer_id
+    from
+        customers
+    join customer_orders 
+        on customers.id = customer_orders.customer_id
 )
 
-SELECT * FROM final
+SELECT * from final
