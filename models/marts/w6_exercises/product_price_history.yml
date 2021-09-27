@@ -7,5 +7,17 @@ models:
           lower_bound_column: created_at
           upper_bound_column: ended_at
           partition_by: product_id
-          gaps: not_allowed        
-        
+          gaps: not_allowed
+
+    columns:
+      - name: id
+        tests:
+          - unique
+          - not_null
+
+      - name: product_price
+        tests:
+          - greater_than_zero
+              severity: error
+            
+    
