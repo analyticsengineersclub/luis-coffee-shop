@@ -6,6 +6,9 @@ name: 'coffee_shop'
 version: '1.0.0'
 config-version: 2
 
+vars:
+  github__using_repo_team: false
+
 # This setting configures which "profile" dbt uses for this project.
 profile: 'coffee_shop'
 
