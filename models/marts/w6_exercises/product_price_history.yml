@@ -18,6 +18,6 @@ models:
       - name: product_price
         tests:
           - greater_than_zero
-              severity: error
+            
             
     
